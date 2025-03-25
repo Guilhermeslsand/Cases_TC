@@ -136,3 +136,18 @@ body {
     color: white;
     font-size: 16px;
 }
+
+.product-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.falling-candy {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+.falling-candy.dropped {
+    transform: translateY(300px);
+    opacity: 0;
+}
