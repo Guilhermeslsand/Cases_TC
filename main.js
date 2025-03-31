@@ -15,6 +15,10 @@ class AutomatoMaquinaVenda {
         
         // Variáveis de controle
         this.creditoTotal = 0;
+<<<<<<< HEAD
+=======
+        this.troco = 0;
+>>>>>>> 5b49443 (Criação da função de troco)
         this.itemSelecionado = null;
         
         // Preços dos itens
@@ -67,10 +71,20 @@ class AutomatoMaquinaVenda {
         // Transição de estado: ITEM_SELECIONADO -> DISPENSANDO
         if (this.estadoAtual === EstadoMaquina.ITEM_SELECIONADO) {
             const precoItem = this.precosItens[this.itemSelecionado];
+<<<<<<< HEAD
             
             // Desconta o valor do item
             this.creditoTotal -= precoItem;
             
+=======
+    
+            // Calcula o troco
+            this.troco = this.creditoTotal - precoItem;
+
+            // Desconta o valor do item
+            this.creditoTotal = 0;
+
+>>>>>>> 5b49443 (Criação da função de troco)
             // Muda o estado para dispensando
             this.estadoAtual = EstadoMaquina.DISPENSANDO;
             
@@ -86,6 +100,10 @@ class AutomatoMaquinaVenda {
             // Atualiza display
             this.atualizarDisplay();
             
+<<<<<<< HEAD
+=======
+            this.troco = 0;
+>>>>>>> 5b49443 (Criação da função de troco)
             return true;
         }
         
@@ -96,14 +114,62 @@ class AutomatoMaquinaVenda {
     atualizarDisplay() {
         const displayCredito = document.querySelector('.balance');
         if (displayCredito) {
+<<<<<<< HEAD
             displayCredito.textContent = `Crédito: R$${(this.creditoTotal / 100).toFixed(2).replace('.', ',')}`;
         }
     }
 
+=======
+            const creditoFormatado = `Crédito: R$${(this.creditoTotal / 100).toFixed(2).replace('.', ',')}`;
+            const trocoFormatado = `Troco: R$${(this.troco / 100).toFixed(2).replace('.', ',')}`;
+            displayCredito.textContent = `${creditoFormatado}.  ${trocoFormatado}.`;
+        }
+    }
+
+    // Método para animar o troco saindo da máquina
+    animarTroco() {
+        // Seleciona a área da saída de troco
+        const trocoSection = document.querySelector('.troco-section');
+
+        // Cria o elemento imagem para o dinheiro
+        const dinheiro = document.createElement('img');
+        dinheiro.src = "images/money.png"; // Substitua pelo caminho correto
+        dinheiro.classList.add('dinheiro-saindo');
+
+        // Estilo inicial (saída de troco)
+        dinheiro.style.cssText = `
+            position: right;
+            bottom: 0px;
+            left: 0%;
+            transform: translateX(10px) translateY(0px);
+            transition: transform 0.8s ease-out;
+            z-index: 10;
+            width: 80px; /* Ajuste conforme o tamanho da imagem */
+        `;
+
+        // Adiciona a imagem na seção de troco
+        trocoSection.appendChild(dinheiro);
+
+        // Força o navegador a calcular o layout antes da animação
+        dinheiro.offsetHeight;
+
+        // Anima o dinheiro "saindo" da máquina
+        dinheiro.style.transform = 'translateX(90%) translateY(0px)';
+
+        // Remove o dinheiro após a animação
+        setTimeout(() => {
+            dinheiro.style.opacity = '0';
+            dinheiro.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => dinheiro.remove(), 500);
+        }, 1500);
+    }
+
+>>>>>>> 5b49443 (Criação da função de troco)
     // Método para animar queda do item
     animarQuedaItem(nomeItem) {
         const candyElements = document.querySelectorAll('.candy');
         let candyToFall;
+<<<<<<< HEAD
 
         switch(nomeItem) {
             case "Doce A":
@@ -113,11 +179,30 @@ class AutomatoMaquinaVenda {
                 candyToFall = candyElements[1];
                 break;
             case "Doce C":
+=======
+        let candyChoice;
+
+        switch(nomeItem) {
+            case "Doce A":
+            	candyChoice = 0;
+                candyToFall = candyElements[0];
+                break;
+            case "Doce B":
+            	candyChoice = 1;
+                candyToFall = candyElements[1];
+                break;
+            case "Doce C":
+            	candyChoice = 2;
+>>>>>>> 5b49443 (Criação da função de troco)
                 candyToFall = candyElements[2];
                 break;
         }
 
+<<<<<<< HEAD
         if (candyToFall) {
+=======
+        if (candyToFall && candyChoice == 0) {
+>>>>>>> 5b49443 (Criação da função de troco)
             const productSection = document.querySelector('.product-section');
             const fallingCandy = candyToFall.cloneNode(true);
             fallingCandy.classList.add('falling-candy');
@@ -140,6 +225,56 @@ class AutomatoMaquinaVenda {
                 fallingCandy.remove();
             }, 2000);
         }
+<<<<<<< HEAD
+=======
+        if (candyToFall && candyChoice == 1) {
+            const productSection = document.querySelector('.product-section');
+            const fallingCandy = candyToFall.cloneNode(true);
+            fallingCandy.classList.add('falling-candy');
+            
+            fallingCandy.style.cssText = `
+                position: absolute;
+                top: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all 1s ease-in-out;
+                z-index: 10;
+            `;
+
+            productSection.appendChild(fallingCandy);
+            fallingCandy.offsetHeight;
+
+            fallingCandy.style.top = `${productSection.clientHeight - fallingCandy.clientHeight - 10}px`;
+            
+            setTimeout(() => {
+                fallingCandy.remove();
+            }, 2000);
+        }
+        if (candyToFall && candyChoice == 2) {
+            const productSection = document.querySelector('.product-section');
+            const fallingCandy = candyToFall.cloneNode(true);
+            fallingCandy.classList.add('falling-candy');
+            
+            fallingCandy.style.cssText = `
+                position: absolute;
+                top: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all 1s ease-in-out;
+                z-index: 10;
+            `;
+
+            productSection.appendChild(fallingCandy);
+            fallingCandy.offsetHeight;
+
+            fallingCandy.style.top = `${productSection.clientHeight - fallingCandy.clientHeight - 10}px`;
+            
+            setTimeout(() => {
+                fallingCandy.remove();
+            }, 2000);
+        }
+        this.animarTroco();
+>>>>>>> 5b49443 (Criação da função de troco)
     }
 }
 
@@ -148,6 +283,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cria instância do autômato
     const maquinaVenda = new AutomatoMaquinaVenda();
 
+<<<<<<< HEAD
+=======
+    maquinaVenda.atualizarDisplay();
+
+>>>>>>> 5b49443 (Criação da função de troco)
     // Configura botões de moeda
     const botoesMoeda = document.querySelectorAll('.btn-coin');
     botoesMoeda.forEach(botao => {
@@ -172,4 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 5b49443 (Criação da função de troco)

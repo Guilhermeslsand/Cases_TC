@@ -60,6 +60,24 @@ body {
     margin: 10px 0; /* Espaçamento acima e abaixo da imagem */
 }
 
+.troco-section {
+    position: relative; /* Cria um contexto de empilhamento */
+    width: 100px; /* Largura fixa */
+    height: 50px; /* Altura fixa */
+    background-color: transparent; /* Fundo transparente */
+    display: flex; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.troco {
+    position: absolute; /* Garante que a imagem de troco fique fixa */
+    z-index: 0; /* Define um z-index baixo para que o dinheiro fique acima */
+    width: 30px; /* Ajuste conforme necessário */
+    height: 40px; /* Mantém a proporção da imagem */
+}
+
+
 .product-section:last-child {
     margin-bottom: 0;
 }
