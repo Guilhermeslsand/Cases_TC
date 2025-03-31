@@ -43,6 +43,8 @@ body {
 }
 
 .candy {
+    position: relative;
+    display: block;
     width: 110px; /* Ajuste a largura conforme necessário */
     height: 100px; /* Mantém a proporção da imagem */
     margin: 10px 0; /* Espaçamento entre as imagens */

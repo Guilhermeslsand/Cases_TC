@@ -15,10 +15,7 @@ class AutomatoMaquinaVenda {
         
         // Variáveis de controle
         this.creditoTotal = 0;
-<<<<<<< HEAD
-=======
         this.troco = 0;
->>>>>>> 5b49443 (Criação da função de troco)
         this.itemSelecionado = null;
         
         // Preços dos itens
@@ -71,12 +68,6 @@ class AutomatoMaquinaVenda {
         // Transição de estado: ITEM_SELECIONADO -> DISPENSANDO
         if (this.estadoAtual === EstadoMaquina.ITEM_SELECIONADO) {
             const precoItem = this.precosItens[this.itemSelecionado];
-<<<<<<< HEAD
-            
-            // Desconta o valor do item
-            this.creditoTotal -= precoItem;
-            
-=======
     
             // Calcula o troco
             this.troco = this.creditoTotal - precoItem;
@@ -84,7 +75,6 @@ class AutomatoMaquinaVenda {
             // Desconta o valor do item
             this.creditoTotal = 0;
 
->>>>>>> 5b49443 (Criação da função de troco)
             // Muda o estado para dispensando
             this.estadoAtual = EstadoMaquina.DISPENSANDO;
             
@@ -100,10 +90,7 @@ class AutomatoMaquinaVenda {
             // Atualiza display
             this.atualizarDisplay();
             
-<<<<<<< HEAD
-=======
             this.troco = 0;
->>>>>>> 5b49443 (Criação da função de troco)
             return true;
         }
         
@@ -114,12 +101,6 @@ class AutomatoMaquinaVenda {
     atualizarDisplay() {
         const displayCredito = document.querySelector('.balance');
         if (displayCredito) {
-<<<<<<< HEAD
-            displayCredito.textContent = `Crédito: R$${(this.creditoTotal / 100).toFixed(2).replace('.', ',')}`;
-        }
-    }
-
-=======
             const creditoFormatado = `Crédito: R$${(this.creditoTotal / 100).toFixed(2).replace('.', ',')}`;
             const trocoFormatado = `Troco: R$${(this.troco / 100).toFixed(2).replace('.', ',')}`;
             displayCredito.textContent = `${creditoFormatado}.  ${trocoFormatado}.`;
@@ -164,22 +145,10 @@ class AutomatoMaquinaVenda {
         }, 1500);
     }
 
->>>>>>> 5b49443 (Criação da função de troco)
     // Método para animar queda do item
     animarQuedaItem(nomeItem) {
         const candyElements = document.querySelectorAll('.candy');
         let candyToFall;
-<<<<<<< HEAD
-
-        switch(nomeItem) {
-            case "Doce A":
-                candyToFall = candyElements[0];
-                break;
-            case "Doce B":
-                candyToFall = candyElements[1];
-                break;
-            case "Doce C":
-=======
         let candyChoice;
 
         switch(nomeItem) {
@@ -193,16 +162,11 @@ class AutomatoMaquinaVenda {
                 break;
             case "Doce C":
             	candyChoice = 2;
->>>>>>> 5b49443 (Criação da função de troco)
                 candyToFall = candyElements[2];
                 break;
         }
 
-<<<<<<< HEAD
-        if (candyToFall) {
-=======
         if (candyToFall && candyChoice == 0) {
->>>>>>> 5b49443 (Criação da função de troco)
             const productSection = document.querySelector('.product-section');
             const fallingCandy = candyToFall.cloneNode(true);
             fallingCandy.classList.add('falling-candy');
@@ -225,8 +189,6 @@ class AutomatoMaquinaVenda {
                 fallingCandy.remove();
             }, 2000);
         }
-<<<<<<< HEAD
-=======
         if (candyToFall && candyChoice == 1) {
             const productSection = document.querySelector('.product-section');
             const fallingCandy = candyToFall.cloneNode(true);
@@ -274,7 +236,6 @@ class AutomatoMaquinaVenda {
             }, 2000);
         }
         this.animarTroco();
->>>>>>> 5b49443 (Criação da função de troco)
     }
 }
 
@@ -283,11 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cria instância do autômato
     const maquinaVenda = new AutomatoMaquinaVenda();
 
-<<<<<<< HEAD
-=======
     maquinaVenda.atualizarDisplay();
 
->>>>>>> 5b49443 (Criação da função de troco)
     // Configura botões de moeda
     const botoesMoeda = document.querySelectorAll('.btn-coin');
     botoesMoeda.forEach(botao => {
@@ -312,8 +270,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 5b49443 (Criação da função de troco)
