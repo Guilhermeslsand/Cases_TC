@@ -1,10 +1,6 @@
 # Máquina de Venda de Doces - Autômato Finito Determinístico (AFD)
 
-<<<<<<< HEAD
-![Preview da Máquina](https://drive.google.com/file/d/1ROajSPXtxJ8ixUguCvxqtNjOt9GJI7Aa/view?usp=drive_link) <!-- Adicione uma imagem de preview se disponível -->
-=======
 ![Preview da Máquina](readme/Case1.png) <!-- Adicione uma imagem de preview se disponível -->
->>>>>>> d4c555e (Atualizando o readme)
 
 ## Descrição do Projeto
 
