@@ -75,11 +75,16 @@ class AutomatoMaquinaVenda {
             // Desconta o valor do item
             this.creditoTotal = 0;
 
+
             // Muda o estado para dispensando
             this.estadoAtual = EstadoMaquina.DISPENSANDO;
-            
+
             // Animação de queda do item
             this.animarQuedaItem(this.itemSelecionado);
+
+            if (this.troco > 0) {
+                this.animarTroco();
+            }         
             
             // Reseta para estado ocioso
             this.estadoAtual = EstadoMaquina.OCIOSO;
@@ -108,6 +113,67 @@ class AutomatoMaquinaVenda {
     }
 
     // Método para animar o troco saindo da máquina
+    animarDinheiro(valorMoeda) {
+        // Variável para rastrear o número de animações em andamento
+        let animacoesPendentes = 0;
+
+         // Mapeamento de valores para imagens
+        const imagensDinheiro = {
+            100: "/images/moeda1.png", // Caminho para a imagem da moeda de R$1,00
+            200: "/images/nota2.jpg",  // Caminho para a imagem da nota de R$2,00
+            500: "/images/nota5.jpg"   // Caminho para a imagem da nota de R$5,00
+        };
+
+        // Seleciona a área da saída de troco
+        const dinheiroSection = document.querySelector('.money-section');
+
+        // Cria o elemento imagem para o dinheiro
+        const dinheiro = document.createElement('img');
+        dinheiro.src = imagensDinheiro[valorMoeda]; // Define a imagem correspondente ao valor
+        //dinheiro.src = "/images/moeda1.png"; // Substitua pelo caminho correto
+        dinheiro.classList.add('dinheiro-entrando');
+
+        
+        // Estilo inicial (saída de troco)
+        dinheiro.style.cssText = `
+            position: right;
+            bottom: 0px;
+            left: 0%;
+            transform: translateX(50px) translateY(-10px);
+            transition: transform 0.3s ease-out;
+            z-index: 10; /* Z-index inicial */
+            width: 50px; /* Ajuste conforme o tamanho da imagem */
+        `;
+
+        // Adiciona a imagem na seção de troco
+        dinheiroSection.appendChild(dinheiro);
+
+        // Força o navegador a calcular o layout antes da animação
+        dinheiro.offsetHeight;
+
+         // Calcula o atraso com base no número de animações pendentes
+        const atraso = animacoesPendentes * 500; // 500ms de atraso entre cada animação
+        animacoesPendentes++;
+
+        // Define um atraso para iniciar a animação
+        setTimeout(() => {
+         // Anima o dinheiro "saindo" da máquina
+         dinheiro.style.transform = 'translateX(-7%) translateY(-3px)';
+
+            // Remove o dinheiro após a animação
+            setTimeout(() => {
+                dinheiro.style.opacity = '0';
+                dinheiro.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    dinheiro.remove();
+                    animacoesPendentes--; // Reduz o contador de animações pendentes
+                }, 500);
+            }, 800); // Tempo da animação de saída
+        }, atraso);
+    }
+
+
+    // Método para animar o troco saindo da máquina0
     animarTroco() {
         // Seleciona a área da saída de troco
         const trocoSection = document.querySelector('.troco-section');
@@ -235,7 +301,6 @@ class AutomatoMaquinaVenda {
                 fallingCandy.remove();
             }, 2000);
         }
-        this.animarTroco();
     }
 }
 
@@ -252,6 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
         botao.addEventListener('click', () => {
             const valorMoeda = parseInt(botao.getAttribute('data-value'));
             maquinaVenda.inserirCredito(valorMoeda);
+            maquinaVenda.animarDinheiro(valorMoeda);
         });
     });
 
