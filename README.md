@@ -43,8 +43,7 @@ Este projeto é uma implementação interativa de uma máquina de venda de doces
 | Estado | Significado  |
 |---------|--------------------------|
 |Q0|Estado Inicial que representa que tem R$ 0,00 de Crédito.|
-|Q1|Este é o estado em que a máquina deve se encontrar quando o usuário tiver
-realizado a ação correspondente à inserção de apenas R$ 1,00.|
+|Q1|Este é o estado em que a máquina deve se encontrar quando o usuário tiver realizado a ação correspondente à inserção de apenas R$ 1,00.|
 |Q2|Este é o estado em que a máquina deve se encontrar quando o usuário tiver inserido uma quantia equivalente a R$ 2,00 na máquina, seja através de qual combinação de moedas for, independentemente do valor das mesmas e da sequência em que foram inseridas.|
 |Q3|Este é o estado em que a máquina deve se encontrar quando o usuário tiver inserido uma quantia equivalente a R$ 3,00 na máquina, seja através de qual combinação de moedas for, independentemente do valor das mesmas e da sequência em que foram inseridas.|
 |Q4|Este é o estado em que a máquina deve se encontrar quando o usuário tiver inserido uma quantia equivalente a R$ 4,00 na máquina, seja através de qual combinação de moedas for, independentemente do valor das mesmas e da sequência em que foram inseridas.|
