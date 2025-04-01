@@ -119,9 +119,9 @@ class AutomatoMaquinaVenda {
 
          // Mapeamento de valores para imagens
         const imagensDinheiro = {
-            100: "/images/moeda1.png", // Caminho para a imagem da moeda de R$1,00
-            200: "/images/nota2.jpg",  // Caminho para a imagem da nota de R$2,00
-            500: "/images/nota5.jpg"   // Caminho para a imagem da nota de R$5,00
+            100: "images/moeda1.png", // Caminho para a imagem da moeda de R$1,00
+            200: "images/nota2.jpg",  // Caminho para a imagem da nota de R$2,00
+            500: "images/nota5.jpg"   // Caminho para a imagem da nota de R$5,00
         };
 
         // Seleciona a área da saída de troco
