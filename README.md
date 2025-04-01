@@ -58,3 +58,15 @@ Este projeto é uma implementação interativa de uma máquina de venda de doces
 |BT|Este estado representa que o cliente conseguiu comprar o doce B, ou seja, deposito dinheiro suficiente no máquina para liberar o doce B e tem troco para receber.|
 |CS|Este estado representa que o cliente conseguiu comprar o doce C, ou seja, deposito dinheiro suficiente no máquina para liberar o doce C e não tem troco para receber.|
 |CT|Este estado representa que o cliente conseguiu comprar o doce C, ou seja, deposito dinheiro suficiente no máquina para liberar o doce C e tem troco para receber.|
+
+## Integrantes
+| Nome      |  RA  |
+|---------|--------------------------|
+| Bruno grassi R M C | 822160906 |
+| Victor de Lima Reis | 822156460 |
+| Matheus Barbosa Pereira | 822161770 |
+| João Carlos Bonfim | 822163325 |
+| Victor Ulysses monteiro de Oliveira | 822166074 |
+| Lucas da Silva | 822161395 |
+| Guilherme Sales de Andrade | 825125938 |
+
