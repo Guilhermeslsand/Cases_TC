@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.machine-container {
+    padding: 5px;
+    background-color: transparent;
+}
+
+.machine {
+    width: 600px;
+    height: 600px;
+    background-color: #ed2939; /* Red background */
+    display: flex;
+    padding: 20px;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.product-section {
+    flex: 1;
+    background-color: #333; /* Dark gray sections */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column; /* Altera a direção do flex para coluna */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.candy {
+    position: relative;
+    display: block;
+    width: 110px; /* Ajuste a largura conforme necessário */
+    height: 100px; /* Mantém a proporção da imagem */
+    margin: 10px 0; /* Espaçamento entre as imagens */
+}
+
+.separator {
+    width: 330px; /* Ajuste a largura conforme necessário */
+    height: 5px; /* Mantém a proporção da imagem */
+    margin: 10px 0; /* Espaçamento acima e abaixo da imagem */
+}
+
+.separator2 {
+    width: 330px; /* Ajuste a largura conforme necessário */
+    height: 30px; /* Mantém a proporção da imagem */
+    margin: 10px 0; /* Espaçamento acima e abaixo da imagem */
+}
+
+.troco-section {
+    position: relative; /* Cria um contexto de empilhamento */
+    width: 100px; /* Largura fixa */
+    height: 50px; /* Altura fixa */
+    background-color: transparent; /* Fundo transparente */
+    display: flex; /* Centraliza o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.troco {
+    position: absolute; /* Garante que a imagem de troco fique fixa */
+    z-index: 0; /* Define um z-index baixo para que o dinheiro fique acima */
+    width: 30px; /* Ajuste conforme necessário */
+    height: 40px; /* Mantém a proporção da imagem */
+}
+
+
+.product-section:last-child {
+    margin-bottom: 0;
+}
+
+.right-panel {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display-screen {
+    height: 60px;
+    background-color: #000; /* Black screen */
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px;
+}
+
+.info-bar {
+    height: 40px;
+    background-color: #000; /* Black info bar */
+    margin-bottom: 40px;
+}
+
+.price-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-coin {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #eee;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.selection-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.candy-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-candy {
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.money-section {
+    position: relative;
+    width: 40px;
+    height: 30px; /* Altura da área de entrada */
+    background-color: #222; /* Fundo escuro para a área */
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-left: 85px; /* Distância da borda esquerda */
+    justify-content: center;
+    align-items: center;; /* Borda para destacar a área */
+}
+
+.candy-price {
+    color: white;
+    font-size: 16px;
+}
+
+.product-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.falling-candy {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+.falling-candy.dropped {
+    transform: translateY(300px);
+    opacity: 0;
+}

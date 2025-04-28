@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="machine-container">
+        <div class="machine">
+            <div class="left-panel">
+                <div class="product-section">
+                    <!-- Adicionando imagens de doces e separadores -->
+                    <img src="images/candy1.png" alt="Candy 1" class="candy">
+                    <img src="images/separador1.png" alt="Separator 1" class="separator">
+                    <img src="images/candy2.png" alt="Candy 2" class="candy">
+                    <img src="images/separador1.png" alt="Separator 2" class="separator">
+                    <img src="images/candy3.png" alt="Candy 3" class="candy">
+                    <img src="images/separador1.png" alt="Separator 2" class="separator2">
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="display-screen">
+                    <div class="balance">Crédito: R$0,00. Trooco: R$ 0,00.</div>
+                </div>
+                <div class="money-section">
+                </div>
+                <div class="price-buttons">
+                    <button class="btn-coin" data-value="100">R$1,00</button>
+                    <button class="btn-coin" data-value="200">R$2,00</button>
+                    <button class="btn-coin" data-value="500">R$5,00</button>
+                </div>
+                <div class="selection-buttons">
+                    <div class="candy-option">
+                        <button class="btn-candy" data-name="Doce A">Doce A</button>
+                        <span class="candy-price">R$6,00</span>
+                    </div>
+                    <div class="candy-option">
+                        <button class="btn-candy" data-name="Doce B">Doce B</button>
+                        <span class="candy-price">R$7,00</span>
+                    </div>
+                    <div class="candy-option">
+                        <button class="btn-candy" data-name="Doce C">Doce C</button>
+                        <span class="candy-price">R$8,00</span>
+                    </div>
+                    <div class="troco-section">
+                        <img src="images/troco.png" alt="Troco" class="troco">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

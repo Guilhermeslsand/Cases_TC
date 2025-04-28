@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 body {
-  font:sans-serif;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #d6d4d4; /* Adicionado um fundo leve */
 }
 *,*:after,*:before {
   box-sizing:border-box;
@@ -53,9 +56,12 @@ body {
   margin-bottom:10px;
 }
 .buttons {
-  display:flex;
-  width:100%;
-  height:370px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  grid-template-rows: repeat(2, 1fr); /* 2 linhas */
+  margin: 0 auto; /* Centraliza o quadrado */
+  width:90%;
+  height:250px;
   justify-content:space-around;
   flex-wrap:wrap-reverse;
 }
@@ -96,10 +102,10 @@ button.btn-floor {
 .building {
   width: 300px;
   position: absolute;
-  background: #ccc26b;
+  background: #d11919;
   background-image:linear-gradient(
-      transparentize(#ccc26b,.4), 
-      transparentize(#ccc26b,.4)
+      transparentize(#d11919,.4), 
+      transparentize(#d11919.4)
   ),url("http://gdj.graphicdesignjunction.com/wp-content/uploads/2011/05/photoshop-texture-35.jpg");
   background-size:cover,cover;
   height: 460px;
@@ -143,7 +149,7 @@ button.btn-floor {
       width:100%;
       position:absolute;
       top:0;
-      border-top:10px solid turquoise;
+      border-top:10px solid rgb(100, 102, 102);
       opacity:.8;
     }
     
@@ -180,8 +186,8 @@ button.btn-floor {
         content:"";
         position:absolute;
         display:block;
-        background:goldenrod;
-        border:2px solid darkgoldenrod;
+        background:rgb(197, 196, 194);
+        border:2px solid rgb(71, 70, 65);
         width:40px;
         height:40px;
         top:20px;
@@ -198,7 +204,7 @@ button.btn-floor {
 }
 .elevator-container {
   position:absolute;
-  background:turquoise;
+  background:rgb(100, 102, 102);
   width:100px;
   left:100px;
   height:100%;
@@ -210,31 +216,11 @@ button.btn-floor {
     margin-left:-20px;
     margin-top:7px;
     left:50%;
-    background:white;
+    background:rgb(66, 66, 66);
     border:3px solid #333;
     border-top-width:10px;
     position:absolute;
     
-    &-door {
-      width:100%;
-      height:100%;
-      right:0;
-      position:relative;
-      background:rgb(51, 47, 47);
-      background:radial-gradient(center, circle,
-      rgba(255,255,255,.35),
-      rgba(255,255,255,0) 20%,
-      rgba(255,255,255,0) 21%),
-    radial-gradient(center, circle,
-      rgba(0,0,0,.2),
-      rgba(0,0,0,0) 20%,
-      rgba(0,0,0,0) 21%),
-    radial-gradient(center, circle farthest-corner,
-      grey,
-      lighten(gray,4%));
-	background-size: 7px 7px, 7px 7px, 100% 100%;
-	background-position: 1px 1px, 0px 0px, center center;
-    }
     &-light {
       position:absolute;
       top:-8px;
@@ -247,4 +233,42 @@ button.btn-floor {
       background:lime;
     }
   }
+}
+.elevator-door {
+  position: absolute;
+  width: 100%; /* Porta fechada ocupa toda a largura */
+  height: 100%; /* Porta ocupa toda a altura do elevador */
+  background: rgb(201, 200, 200) !important;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 20%);
+  border-left: 2px solid #333;
+  border-right: 2px solid #333;
+  transition: transform 1s ease-in-out; /* Animação suave para abrir/fechar */
+  transform-origin: center; /* Define o ponto de origem para a animação */
+}
+
+.elevator-door.open {
+  transform: scaleX(1); /* Porta aberta (reduz a largura para 0%) */
+}
+
+.elevator-door.closed {
+  transform: scaleX(0); /* Porta fechada (restaura a largura para 100%) */
+}
+
+button.btn-floor.door-control {
+  background: #E6E6E6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button.btn-floor.door-control span {
+  display: block;
+  transform: rotate(90deg);
+  line-height: 20px;
+}
+
+button.btn-floor.door-control:active,
+button.btn-floor.door-control.active {
+  background: #FFCC00;
+  color: #333;
+  border-color: #CC9900;
 }
