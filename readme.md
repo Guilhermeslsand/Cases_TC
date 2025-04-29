@@ -1,6 +1,6 @@
 # Cases - Teoria da computação e Automatos.
 
-![Preview da Máquina](/case1/readme/site_geral.png 
+![Preview da Máquina](/readme/site_geral.png)
 
 ## Descrição do Projeto
 
