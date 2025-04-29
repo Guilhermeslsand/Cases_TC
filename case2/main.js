@@ -52,7 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!isMoving) {
             processNextFloor();
           }
+        } // Caso especial: botão do andar atual
+        else if (floor === currentFloor && !isMoving) {
+          // Abrir e fechar a porta imediatamente
+          openDoor();
+        
+          // Remover o destaque do botão após abertura
+          setTimeout(() => {
+            button.classList.remove('active');
+          }, DOOR_OPERATION_TIME + DOOR_OPEN_TIME); // após abertura e espera
         }
+        
       });
     });
     

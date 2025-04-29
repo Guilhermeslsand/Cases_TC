@@ -272,3 +272,24 @@ button.btn-floor.door-control.active {
   color: #333;
   border-color: #CC9900;
 }
+
+.back-button-container {
+  text-align: center; /* Centraliza o botão na página */
+  margin-top: 20px; /* Adiciona espaço acima do botão */
+}
+
+.btn-back {
+  background-color: #8d3c46; 
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  padding: 10px 20px; /* Adiciona espaçamento interno */
+  font-size: 16px; /* Define o tamanho da fonte */
+  font-weight: bold; /* Deixa o texto em negrito */
+  cursor: pointer; /* Mostra o cursor de "mão" ao passar sobre o botão */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.btn-back:hover {
+  background-color: #d80c38; /* Cor de fundo mais escura ao passar o mouse */
+}
