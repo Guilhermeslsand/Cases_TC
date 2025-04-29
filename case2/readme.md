@@ -1,4 +1,4 @@
-# Máquina de Venda de Doces - Autômato Finito Determinístico (AFD)
+# Elevador - Autômato Finito Determinístico (AFD)
 
 ![Preview da Máquina](/readme/Case2.png)
 
