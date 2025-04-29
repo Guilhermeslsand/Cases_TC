@@ -1,6 +1,6 @@
 # Máquina de Venda de Doces - Autômato Finito Determinístico (AFD)
 
-![Preview da Máquina](readme/Case1.png) <!-- Adicione uma imagem de preview se disponível -->
+![Preview da Máquina](/readme/Case1.png) 
 
 ## Descrição do Projeto
 
@@ -28,7 +28,7 @@ Este projeto é uma implementação interativa de uma máquina de venda de doces
    git clone https://github.com/Guilhermeslsand/Case1.git
    
 ## Representação do Autômato
-![Preview da Automato](readme/Automato_Case_1.png)
+![Preview da Automato](/readme/Automato_Case_1.png)
 
 ### Legendas para o Autômato
 | Símbolo | Ação                     |

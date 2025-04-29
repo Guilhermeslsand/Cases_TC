@@ -1,27 +1,49 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 100px;
-    background-color: #4e4c4c; /* Adicionado um fundo leve */
+    margin-top: 50px; /* Reduzido para subir o conteúdo */
+    background-color: #4e4c4c; /* Fundo leve */
 }
 
 h1 {
     color: #d1cccc;
+    margin-bottom: 30px; /* Espaçamento abaixo do título */
+}
+
+.work-container {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 40px; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column; /* Organiza botão e imagem verticalmente */
+    align-items: center; /* Centraliza os itens no eixo horizontal */
+    margin-bottom: 20px; /* Espaçamento entre os itens e o próximo conteúdo */
 }
 
 button {
-    padding: 15px 30px;
-    margin: 10px;
+    padding: 15px 30px; /* Espaçamento interno do botão */
+    margin-bottom: 10px; /* Espaçamento entre o botão e a imagem */
     font-size: 18px;
     cursor: pointer;
     border: none;
     background-color: #8d3c46;
     color: white;
     border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s; /* Adicionada transição para a animação */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
 }
 
 button:hover {
     background-color: #d80c38;
     transform: scale(1.05); /* Efeito de leve aumento ao passar o mouse */
+}
+
+.work-image {
+    width: 460px; /* Aumente a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para destacar a imagem */
 }
