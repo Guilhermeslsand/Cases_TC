@@ -13,7 +13,7 @@ Este projeto é uma implementação interativa de um elevador baseada em um Aut�
 - JavaScript
    
 ## Representação do Autômato
-![Preview da Automato](/readme/Automato_2_1.png)
+![Preview da Automato](/readme/automato_2_1.png)
 
 ### Legendas para o Autômato
 | Símbolo | Ação                           |
